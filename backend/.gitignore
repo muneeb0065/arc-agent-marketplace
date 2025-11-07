@@ -1,0 +1,5 @@
+# Ignore the folder with all our installed tools
+node_modules
+
+# Ignore the file with all our secret keys!
+.env
