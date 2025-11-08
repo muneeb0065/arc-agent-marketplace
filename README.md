@@ -1,25 +1,13 @@
 # 🤖 Arc-strator: A Decentralized AI Agent Marketplace
 
-**Built for the lablab.ai "AI Agents on Arc with USDC" Hackathon (November 2025).**
-
 Arc-strator is a full-stack, decentralized application (dApp) that demonstrates a working, autonomous economy for AI agents. It's a decentralized marketplace where a "Manager Agent" can autonomously discover, hire, and pay "Specialist Agents" for their generative content.
 
 All payments are settled instantly and trustlessly using an on-chain escrow contract, powered by **Arc** and **USDC**.
 
----
-
-## 🎥 Demo Video
-
-**(This is the most important part of your submission!)**
-
-[YOUR 2-MINUTE DEMO VIDEO LINK HERE. Record your screen showing your React App and your `backend` terminal at the same time!]
-
----
 
 ## 🤖 How it Works
 
 This project consists of four main components that create a fully automated, end-to-end workflow. The "Manager Agent" (our backend) is the "brain" that connects all the pieces.
-
 
 
 Here is the complete job-cycle for hiring our "Voiceover Agent":
@@ -57,7 +45,7 @@ Here is the complete job-cycle for hiring our "Voiceover Agent":
 * **`React.js`**: The frontend "lobby" for the user to interact with the marketplace.
 * **`Axios`**: For all HTTP communication (Frontend → Manager, Manager → Specialist).
 
----
+
 
 ## 🚀 How to Run (Quick Start)
 
@@ -65,25 +53,20 @@ The smart contracts and AI agents are **already deployed**! You can run the back
 
 ### Live Deployed Components
 
-> **Note:** Fill these in with your *actual* deployed addresses and URLs.
+* **Arc `AgentServiceRegistry`:** `0x6138336C0ef3C44c387Bba01D961325b0f23b50B`
+* **Arc `A2AEscrow`:** `0x4Ddd84402421EfCbCb5A986146F3dCeA2A2d81A2`
+* **`TweetWriterV2` Agent:** `https://polished-moon-464a.sheikhmuneeb926.workers.dev`
+* **`VoiceoverAgent`:** `https://spring-rice-13cb.sheikhmuneeb926.workers.dev`
 
-* **Arc `AgentServiceRegistry`:** `YOUR_REGISTRY_ADDRESS_HERE`
-* **Arc `A2AEscrow`:** `YOUR_ESCROW_ADDRESS_HERE`
-* **`TweetWriterV2` Agent:** `https://YOUR-TWEETWRITER-URL.workers.dev`
-* **`VoiceoverAgent`:** `https://YOUR-VOICEOVER-AGENT-URL.workers.dev`
-
----
 
 ### Terminal 1: Run the Backend (Manager Agent)
 
 1.  **Navigate to the `backend` folder:**
-    ```bash
     cd backend
-    ```
+    
 2.  **Install dependencies:**
-    ```bash
     npm install
-    ```
+
 3.  **Create your Manager's "wallet":**
     * Create a **new** MetaMask account and name it "Manager Agent."
     * Go to the [Circle Faucet](https://faucet.circle.com), select "Arc Testnet," and send 10 USDC to this **new** account.
@@ -97,8 +80,8 @@ The smart contracts and AI agents are **already deployed**! You can run the back
     ARC_TESTNET_RPC_URL="[https://rpc.testnet.arc.network](https://rpc.testnet.arc.network)"
 
     # -- YOUR CONTRACT ADDRESSES --
-    REGISTRY_CONTRACT_ADDRESS="YOUR_REGISTRY_ADDRESS_HERE"
-    ESCROW_CONTRACT_ADDRESS="YOUR_ESCROW_ADDRESS_HERE"
+    REGISTRY_CONTRACT_ADDRESS="0x6138336C0ef3C44c387Bba01D961325b0f23b50B"
+    ESCROW_CONTRACT_ADDRESS="0x4Ddd84402421EfCbCb5A986146F3dCeA2A2d81A2E"
 
     # -- Official USDC Token Address --
     USDC_CONTRACT_ADDRESS="0x3600000000000000000000000000000000000000"
@@ -108,31 +91,22 @@ The smart contracts and AI agents are **already deployed**! You can run the back
     ```
 
 5.  **Run the server:**
-    ```bash
     node index.js
-    ```
+    
     *You should see `Manager Agent server listening on http://localhost:3001`.*
 
 ### Terminal 2: Run the Frontend (Lobby)
 
 1.  **Navigate to the `frontend` folder:**
-    ```bash
     cd frontend
-    ```
+    
 2.  **Install dependencies:**
-    ```bash
     npm install
-    ```
+    
 3.  **Run the app:**
-    ```bash
     npm start
-    ```
+
     *This will automatically open `http://localhost:3000` in your browser.*
 
 4.  You can now use the app!
 
----
-
-### (Optional) How to Re-Deploy Everything
-
-Instructions for deploying the contracts and agents are in the code comments inside the `blockchain/scripts/deploy.ts` file and the Cloudflare Worker code.
